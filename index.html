@@ -1,0 +1,85 @@
+<!-- Jay Jagannath  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Jay Jagannath</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sun"></div>
+      <div class="rath">
+        <div class="top-div">
+          <div class="td-item1"></div>
+          <div class="td-item2"></div>
+          <div class="td-item3"></div>
+          <div class="td-item4"></div>
+          <div class="td-item5"></div>
+          <div class="td-item6"></div>
+          <div class="flag"></div>
+        </div>
+        <div class="ground1"></div>
+        <div class="ground2"></div>
+        <div class="main-tempel">
+          <div class="temp1">
+            <div class="gate"></div>
+            <div class="gate2"></div>
+            <div class="pilars">
+              <div class="left-pilars">
+                <div class="plrs p-one"></div>
+                <div class="plrs p-two"></div>
+              </div>
+              <div class="right-pilars">
+                <div class="plrs p-two"></div>
+                <div class="plrs p-one"></div>
+              </div>
+            </div>
+            <div class="top-img"></div>
+            <div class="g-up"></div>
+            <div class="crwn">
+              <div class="cr-d">
+                <div class="cr-d-d"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text">
+          <p>Jay Jagannath</p> Happy Ratha Yatra
+        </div>
+      </div>
+      <div class="msg">
+        <p>Joyful Rathyatra! May Lord Jagannath shower you with blessings and guide you towards blissful enlightenment. Jai Jagannath!</p>
+        <div class="btn">OK</div>
+      </div>
+  </body>
+  <script>
+    let btn = document.querySelector(".btn");
+    let msg = document.querySelector(".msg");
+    let song = new Audio("kirtan.mp3");
+    btn.addEventListener("click", event => {
+      song.play();
+      msg.style.display = "none";
+      setInterval(createFlower, 500);
+    })
+
+    function createFlower() {
+      var flower = document.createElement("div");
+      flower.className = "flower";
+
+      var x = Math.random() * (window.innerWidth - 20);
+      var size = Math.random() * 30 + 10;
+      var speed = Math.random() * 3 + 1;
+      flower.style.left = x + "px";
+      flower.style.width = size + "px";
+      flower.style.height = size + "px";
+      flower.style.animationDuration = speed + "s";
+      document.body.appendChild(flower);
+
+      setTimeout(function() {
+        flower.parentNode.removeChild(flower);
+      }, speed * 5000);
+    }
+  </script>
+</html>
